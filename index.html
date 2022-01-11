@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1 class="classic">An application that counts the number of vowels in a string. </h1>
+  <p>This application has specs detailing each behavior it must exhibit. However, they're out of order! Reorder the
+    following list of specs from the simplest possible behavior to the most complex behavior with your partner.</p>
+  <p>
+    1) The program recognizes vowels in a multiple-word sentence, regardless of capitalization.
+    - Input Example: "CATS CATERED THE EVENT"
+    - Output Example: 7 <br>
+    2) The program recognizes a single vowel in a multiple-character word.
+    - Input Example: "cat"
+    - Output Example: 1 <br>
+    3) The program recognizes a single vowel.
+    - Input Example: "a"
+    - Output Example: 1 <br>
+    4) The program recognizes multiple vowels in a single word.
+    - Input Example: "cater"
+    - Output Example: 2 <br>
+    5) The program recognizes a single vowel, regardless of case.
+    - Input Example: "A"
+    - Output Example: 1 <br>
+    6) The program recognizes all vowels in a multiple-word sentence, regardless of inconsistent capitalization.
+    - Input Example: "CaTS CATEReD ThE EveNT"
+    - Output Example: 7 <br>
+    7) The program ignores non-alphabetical characters, since they cannot be vowels.
+    - Input Example: "4%"
+    - Output Example: 0 <br>
+    8) The program recognizes vowels in a multiple-word sentence.
+    - Input Example: "cats catered the event"
+    - Output Example: 7
+  </p>
+  <p>
+  <ol>
+    <li> The program ignores non-alphabetical characters, since they cannot be vowels.</li>
+    <li> The program recognizes vowels in a multiple-word sentence.</li>
+    <li> The program recognizes all vowels in a multiple-word sentence, regardless of inconsistent capitalization.
+    </li>
+    <li> The program recognizes vowels in a multiple-word sentence, regardless of capitalization.</li>
+    <li> The program recognizes multiple vowels in a single word.</li>
+    <li> The program recognizes a single vowel in a multiple-character word.</li>
+    <li> The program recognizes a single vowel, regardless of case.</li>
+    <li> The program recognizes a single vowel.</li>
+  </ol>
+  </p>
+
+  <div id="leap-year">
+    <h2 class="classic">Leap Year</h2>
+    <p>Follow along with the leap year lessons to build an application that identifies whether a given year is a leap
+      year. Make each of the specs detailed in the leap year lessons "pass" (ie: your program returns the expected
+      output for the expected input).</p>
+    <p id="specs">
+      The program should return when a year is not a leap year.
+      (Input Example: 1993, Output Example: false)
+      The program should return 'true' for years divisible by 4, since those are leap years.
+      (Input Example: 2004, Output Example: true)
+      The program should return 'false' for years divisible by 100, since those are not leap years.
+      (Input Example: 1900, Output Example: false)
+      The program should return 'true' for years divisible by 400, since those are leap years.
+      (Input Example: 2000, Output Example: true
+    </p> <br><br>
+
+    <h3 class="classic">Here is your inputted year</h3>
+    <p id="input"></p>
+    <h3 class="classic">Output</h3>
+    <p id="output"></p>
+  </div>
+
+  <div id="pig-latin">
+    <h2 class="classic">Pig Latin</h2>
+    <h3 class="classic">How Pig LAtin Works</h3>
+    <p>Here are the rules:
+      <ol>
+        <li>For words beginning with a vowel, add "ay" to the end.</li>
+        <li>For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".</li>
+        <li>For words beginning with "y", treat "y" as a consonant.</li>
+      </ol>
+    </p>
+  </div>
+
+  <script src="JS/scripts.js"></script>
+</body>
+
+</html>
