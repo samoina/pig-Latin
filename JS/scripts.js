@@ -51,8 +51,10 @@ let splitWordsArr = [];                 //empty array to hold the individual wor
 let multipleVowSent = "";         //variable to hold the new pig latin word that starts with a vowel
 // let consonant = "";                //variable to hold the word without the first consonant
 let multipleConsonant = "";           //variable to hold new pig latin word that starts with consonant
-// let newSentArray = [];
-// let pigLatinArray = "";          //variable that holds the new translated sentence
+
+let firstConsonant = "";              //variable to hold the first consonant 
+
+let pigLatinArray = "";          //variable that holds the new translated sentence
 
 //<--------------FOR TRIAL 2------------------->
 let wordOnlyArr = [];
@@ -84,35 +86,8 @@ function singleLetter(string) {
   }
 }
 
-//function that adds -ay to the end for words that start with a vowel.,
-//and moves first consonant to the end and adds -ay for words with consonants
-// function multipleWordString(string) {
-//   let stringArr = string.split(" ");
-//   console.log(stringArr);
-//   for (let index = 0; index < stringArr.length; index++) {
-//     // console.log(stringArr[index]);
-//     wordArr = stringArr[index].split("");
-//     console.log(wordArr);
-//     console.log(wordArr[0]);
-
-//     for (let index = 0; index < wordArr.length; index++) {
-//       if (/[aeiou]/i.test(wordArr[0])) {
-//         multipleVowSent = (wordArr.join("")).concat("ay");
-//         // console.log(multipleVowSent);
-//         newSentArray.push(multipleVowSent);
-//       } else {
-//         consonant = (wordArr.shift()).concat("ay");
-//         console.log(consonant);
-//         multipleConsonant = (wordArr.join("")).concat(consonant);
-//         console.log(multipleConsonant);
-//         newSentArray.push(multipleConsonant);
-//       }
-//     }
-//   }
-//    console.log(newSentArray); //output ['Enteray', 'Enteray', 'Enteray', 'Enteray', 'Enteray', 'aay', 'entencesay', 'entenceay', 'entenceay', 'entenceay', 'entenceay', 'entenceay', 'entenceay']
-// }
-
 function multipleWordString(string) {
+
   //This splits the sentence into an array of the constituent words
   let stringArr = string.split(" ");
   console.log(stringArr);
@@ -156,22 +131,30 @@ console.log(splitWordsArr);
 //   }
 // }
 
+
+//i realized using nested for-loops was only giving me one word thrice. so is used one for loop and an if-else statement. In the else section for words that start with consonants, i was wondering how to remove the first element. shift() method changes the array by removing the first element and returning it. so now idk why i didnt think of it but you can create a variable to store the removed element. 
 for (let index = 0; index < splitWordsArr.length; index++) {
     if (/[aeiou]/i.test(splitWordsArr[index][index])) {
       multipleVowSent = (splitWordsArr[index].join("")).concat("ay");
-      console.log(multipleVowSent);
-  // } else {
-  //   multipleConsonant = 
+      // console.log(multipleVowSent);
+  } else {
+    firstConsonant = (splitWordsArr[index]).shift();
+    // console.log(firstConsonant);            //to store the first element of the split word, a consonant
+    // console.log(splitWordsArr[index]);       //to check if the array of split words is changed; it is
+    multipleConsonant= (splitWordsArr[index].join("")).concat(firstConsonant + "ay");
+    // console.log(multipleConsonant);
   }
 }
+ pigLatinArray= multipleVowSent + " " + multipleConsonant;        //this only outputs the last word from the vowels and the last one for the consonant
+ console.log(pigLatinArray);
 
-// console.log(multipleVowSent);
+
 
 
 }
 
 
-let userSent = "Enter a sentence";
+let userSent = "Enter a sentence shall";
 isAString(userSent);
 singleLetter(userSent);
 multipleWordString(userSent);
